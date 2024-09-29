@@ -1,0 +1,61 @@
+# Currency Conversion Rates (as per the data you provided)
+rate_co_to_usd = 0.00026  # 1 Colombian peso to USD
+rate_pe_to_usd = 0.27     # 1 Peruvian sol to USD
+rate_br_to_usd = 0.19     # 1 Brazilian real to USD
+
+# Function to convert Colombian Pesos to USD
+def convert_co_to_usd(amount):
+    return amount * rate_co_to_usd
+
+# Function to convert Peruvian Soles to USD
+def convert_pe_to_usd(amount):
+    return amount * rate_pe_to_usd
+
+# Function to convert Brazilian Reais to USD
+def convert_br_to_usd(amount):
+    return amount * rate_br_to_usd
+
+# Main currency converter
+def currency_converter():
+    print("Currency Converter to USD")
+    print("1. Colombian Pesos (CO) to USD")
+    print("2. Peruvian Soles (PE) to USD")
+    print("3. Brazilian Reais (BR) to USD")
+    print("4. Convert all currencies (CO, PE, BR) to USD")
+    
+    # Getting user choice
+    choice = int(input("Choose an option (1-4): "))
+    
+    if choice == 1:
+        co_amount = float(input("Enter the amount in Colombian Pesos: "))
+        usd = convert_co_to_usd(co_amount)
+        print(f"{co_amount} Colombian Pesos = {usd:.2f} USD")
+    
+    elif choice == 2:
+        pe_amount = float(input("Enter the amount in Peruvian Soles: "))
+        usd = convert_pe_to_usd(pe_amount)
+        print(f"{pe_amount} Peruvian Soles = {usd:.2f} USD")
+    
+    elif choice == 3:
+        br_amount = float(input("Enter the amount in Brazilian Reais: "))
+        usd = convert_br_to_usd(br_amount)
+        print(f"{br_amount} Brazilian Reais = {usd:.2f} USD")
+    
+    elif choice == 4:
+        # Convert all currencies to USD
+        co_amount = float(input("Enter the amount in Colombian Pesos: "))
+        pe_amount = float(input("Enter the amount in Peruvian Soles: "))
+        br_amount = float(input("Enter the amount in Brazilian Reais: "))
+        
+        usd_co = convert_co_to_usd(co_amount)
+        usd_pe = convert_pe_to_usd(pe_amount)
+        usd_br = convert_br_to_usd(br_amount)
+        
+        total_usd = usd_co + usd_pe + usd_br
+        print(f"Total USD from all currencies: {total_usd:.2f} USD")
+    
+    else:
+        print("Invalid option, please select from 1 to 4.")
+
+# Call the function to start the converter
+currency_converter()
